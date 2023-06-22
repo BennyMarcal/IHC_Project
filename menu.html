@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Main Menu</title>
+  <title>IHC Presentation</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
+      position: relative;
     }
 
     .container {
-      width: 400px;
+      width: 600px;
       margin: 100px auto;
-      padding: 20px;
+      padding: 50px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
       color: #333;
+      margin-bottom: 30px;
     }
 
     .button-container {
-      margin-top: 30px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 50px;
     }
 
     .button-container button {
-      width: 200px;
-      padding: 10px;
-      margin-bottom: 10px;
+      width: 300px;
+      padding: 40px;
       background-color: #4CAF50;
       color: #fff;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
     }
 
     .button-container button:hover {
@@ -46,36 +50,61 @@
 
     .logout-button {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #f44336;
+      top: -50px;
+      right: 20px;
     }
 
     .logout-button a {
+      padding: 15px 30px;
+      background-color: #f44336;
       color: #fff;
+      border-radius: 4px;
       text-decoration: none;
-      padding: 8px 12px;
-      display: inline-block;
-      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
     .logout-button a:hover {
       background-color: #d32f2f;
     }
+
+    .image-link {
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      z-index: 9999;
+    }
+
+    .image-link img {
+      width: 150px;
+      height: 70px;
+      border-radius: 0%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .image-link img:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Main Menu</h1>
+    <h1>IHC Presentation App</h1>
     <div class="button-container">
-      <button onclick="window.location.href='notas.html'">Page 1</button>
-      <button onclick="window.location.href='avaliacao.html'">Page 2</button>
-      <button onclick="window.location.href='marcacao.html'">Page 3</button>
-      <button onclick="window.location.href='confirmação.html'">Page 4</button>
+      <button onclick="window.location.href='notas.html'">Visualização de Notas</button>
+      <button onclick="window.location.href='avaliacao.html'">Avaliação da Apresentação</button>
+      <button onclick="window.location.href='marcacao.html'">Marcação da Apresentação</button>
+      <button onclick="window.location.href='confirmacao.html'">Confirmação da Marcação</button>
     </div>
     <div class="logout-button">
       <a href="login.html">Logout</a>
     </div>
+  </div>
+
+  <div class="image-link">
+    <a href="https://github.com/BennyMarcal/IHC_Project">
+      <img src="./images/git.png" alt="Link Image">
+    </a>
   </div>
 </body>
 </html>
