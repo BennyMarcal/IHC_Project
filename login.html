@@ -47,7 +47,7 @@
       font-weight: bold;
     }
 
-    input[type="number"],
+    input[type="text"],
     input[type="password"] {
       width: 80%;
       text-align: center;
@@ -96,9 +96,14 @@
 </head>
 <body>
   <div id="bla" class="container">
-    <h1>Login</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <a style="margin-right: 175px;" href="index.html">
+        <img src="./images/home.png" style="width: 20px; height: 20px;">
+      </a>
+      <h1 style="margin-right: 195px;">Login</h1>
+    </div>
     <h3>Insere o teu NMEC:</h3>
-    <input id="user" type="number" name="nmec" required><br>
+    <input id="user" type="text" name="nmec" required><br>
     <h3>Insere a tua Password:</h3>
     <input id="password" type="password" name="password" required><br>
     <input id="signin" type="submit" value="Login" class="login-button">
@@ -118,6 +123,7 @@
       errorMessage.style.color = "black";
       errorMessage.style.fontWeight = "bold";
     }
+    
 
     var signinButton = document.getElementById("signin");
     if (signinButton) {
