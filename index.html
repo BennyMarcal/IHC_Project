@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PresenTracker</title>
+  <style>
+     body {
+      font-family: Arial, sans-serif;
+      background-image: url('./images/main\ 2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      width: 450px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      margin-top: 150px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+      font-weight: bold;
+    }
+
+    .login-button {
+      width: 50%;
+      padding: 15px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .login-button:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .register-link {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PresenTracker</h1>
+    <form>
+      <h3>Já tens conta?</h3>
+      <a href="login.html" class="login-button">Login</a>
+    </form>
+    <p>Novo utilizador? <a class="register-link" href="register.html">Regista-te!</a></p>
+  </div>
+</body>
+</html>

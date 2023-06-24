@@ -97,7 +97,7 @@
       <button onclick="window.location.href='confirmacao.html'">Confirmação da Marcação</button>
     </div>
     <div class="logout-button">
-      <a href="login.html">Logout</a>
+      <a id="logout" href="index.html">Logout</a>
     </div>
   </div>
 
@@ -107,4 +107,13 @@
     </a>
   </div>
 </body>
+<script>
+  var logoutButton = document.getElementById("logout");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      localStorage.removeItem("auth");
+      window.location.href = "index.html";
+    });
+  }
+</script>
 </html>

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login Page</title>
+  <title>PresenTracker</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      background-image: url('./images/main.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
 
     .container {
@@ -15,11 +19,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin: 0 auto;
-      margin-top: 200px;
+      margin-top: 100px;
     }
 
     h1 {
@@ -46,6 +50,7 @@
     input[type="number"],
     input[type="password"] {
       width: 80%;
+      text-align: center;
       padding: 10px;
       margin-bottom: 10px;
       border: 1px solid #ccc;
@@ -76,21 +81,60 @@
       color: #007bff;
       text-decoration: none;
     }
+
+    .login-button {
+      font-size: 15px;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 20px;
+    }
+
   </style>
 </head>
 <body>
-  <div class="container">
+  <div id="bla" class="container">
     <h1>Login</h1>
-    <form action="main_menu.html" method="post">
-      <!-- <label for="nmec">NMEC:</label> -->
-      <h3>Insere o teu NMEC: </h3>
-      <input type="number" id="nmec" name="nmec" pattern="[0-9]+" required><br>
-      <!-- <label for="password">Password:</label> -->
-      <h3>Insere a tua Password: </h3>
-      <input type="password" id="password" name="password" required><br>
-      <input type="submit" value="Login">
-    </form>
+    <h3>Insere o teu NMEC:</h3>
+    <input id="user" type="number" name="nmec" required><br>
+    <h3>Insere a tua Password:</h3>
+    <input id="password" type="password" name="password" required><br>
+    <input id="signin" type="submit" value="Login" class="login-button">
     <p>Ainda não estás registado? <a class="register-link" href="register.html">Regista-te!</a></p>
   </div>
+
+  <script>
+    if (localStorage.getItem("auth") == "true")
+      window.location.href = "menu.html";
+
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("status") && urlParams.get("status") == "error") {
+      var errorMessage = document.createElement("p");
+      var createAccountWrapper = document.getElementById("bla");
+      document.body.insertBefore(errorMessage, createAccountWrapper);
+      errorMessage.innerText = "NMEC ou Password incorreta!";
+      errorMessage.style.color = "black";
+      errorMessage.style.fontWeight = "bold";
+    }
+
+    var signinButton = document.getElementById("signin");
+    if (signinButton) {
+      signinButton.addEventListener("click", () => {
+        var user = document.getElementById("user");
+        var password = document.getElementById("password");
+
+        if (user && password) {
+          if (localStorage.getItem(user.value) == password.value) {
+            localStorage.setItem("auth", true);
+            window.location.href = "menu.html";
+          } else {
+            window.location.href = "login.html?status=error";
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>
