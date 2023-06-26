@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Booking</title>
+    <title>PresenTracker</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-image: url('./images/main3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
         
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 1);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
         
         .back-button {
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             text-decoration: none;
             color: #333;
             transition: color 0.3s ease;
@@ -30,7 +34,7 @@
         }
         
         .calendar {
-            margin-bottom: 20px;
+            margin-bottom: 0px;
         }
         
         .calendar h2 {
@@ -115,159 +119,122 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <a class="back-button" href="menu.html"><img src="./images/arrow.png" alt="Back" style="width: 20px; height: 20px;">  Voltar</a>
-        <h1>Marcação da Apresentação</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <a style="margin-left: 75px;" href="menu.html">
+              <img src="./images/home.png" style="width: 20px; height: 20px;">
+            </a>
+            <h1 style="margin-right: 155px;">Marcação de Apresentações</h1>
+        </div>
         <div class="calendar">
-            <h2>Available Dates:</h2>
             <table id="dateTable">
+                <th colspan="7">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h2 style="margin-left: 350px;"id="currentMonth">Junho</h2>
+                    </div>
+                </th>
                 <tr>
-                    <th colspan="7">Year Calendar</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
                 </tr>
                 <tr>
-                    <th>Jan</th>
-                    <th>Feb</th>
-                    <th>Mar</th>
-                    <th>Apr</th>
-                    <th>May</th>
-                    <th>Jun</th>
-                    <th>Jul</th>
-                </tr>
-                <tr>
+                    <td class="empty-date"></td>
+                    <td class="empty-date"></td>
+                    <td class="empty-date"></td>
                     <td class="selectable-date">1</td>
                     <td class="selectable-date">2</td>
                     <td class="selectable-date">3</td>
                     <td class="selectable-date">4</td>
+
+                </tr>
+                <tr>
                     <td class="selectable-date">5</td>
                     <td class="selectable-date">6</td>
                     <td class="selectable-date">7</td>
-                </tr>
-                <tr>
                     <td class="selectable-date">8</td>
                     <td class="selectable-date">9</td>
                     <td class="selectable-date">10</td>
                     <td class="selectable-date">11</td>
+
+                </tr>
+                <tr>
                     <td class="selectable-date">12</td>
                     <td class="selectable-date">13</td>
                     <td class="selectable-date">14</td>
-                </tr>
-                <tr>
                     <td class="selectable-date">15</td>
                     <td class="selectable-date">16</td>
                     <td class="selectable-date">17</td>
                     <td class="selectable-date">18</td>
+
+                </tr>
+                <tr>
                     <td class="selectable-date">19</td>
                     <td class="selectable-date">20</td>
                     <td class="selectable-date">21</td>
-                </tr>
-                <tr>
                     <td class="selectable-date">22</td>
                     <td class="selectable-date">23</td>
                     <td class="selectable-date">24</td>
                     <td class="selectable-date">25</td>
+
+                </tr>
+                <tr>
                     <td class="selectable-date">26</td>
                     <td class="selectable-date">27</td>
                     <td class="selectable-date">28</td>
-                </tr>
-                <tr>
                     <td class="selectable-date">29</td>
                     <td class="selectable-date">30</td>
                     <td class="selectable-date">31</td>
-                    <td class="empty-date"></td>
-                    <td class="empty-date"></td>
-                    <td class="empty-date"></td>
-                    <td class="empty-date"></td>
-                </tr>
-                <tr>
-                    <th>Aug</th>
-                    <th>Sep</th>
-                    <th>Oct</th>
-                    <th>Nov</th>
-                    <th>Dec</th>
-                    <th colspan="2"></th>
-                </tr>
-                <tr>
-                    <td class="selectable-date">1</td>
-                    <td class="selectable-date">2</td>
-                    <td class="selectable-date">3</td>
-                    <td class="selectable-date">4</td>
-                    <td class="selectable-date">5</td>
-                    <td class="selectable-date">6</td>
-                    <td class="selectable-date">7</td>
-                </tr>
-                <tr>
-                    <td class="selectable-date">8</td>
-                    <td class="selectable-date">9</td>
-                    <td class="selectable-date">10</td>
-                    <td class="selectable-date">11</td>
-                    <td class="selectable-date">12</td>
-                    <td class="selectable-date">13</td>
-                    <td class="selectable-date">14</td>
-                </tr>
-                <tr>
-                    <td class="selectable-date">15</td>
-                    <td class="selectable-date">16</td>
-                    <td class="selectable-date">17</td>
-                    <td class="selectable-date">18</td>
-                    <td class="selectable-date">19</td>
-                    <td class="selectable-date">20</td>
-                    <td class="selectable-date">21</td>
-                </tr>
-                <tr>
-                    <td class="selectable-date">22</td>
-                    <td class="selectable-date">23</td>
-                    <td class="selectable-date">24</td>
-                    <td class="selectable-date">25</td>
-                    <td class="selectable-date">26</td>
-                    <td class="selectable-date">27</td>
-                    <td class="selectable-date">28</td>
-                </tr>
-                <tr>
-                    <td class="selectable-date">29</td>
-                    <td class="selectable-date">30</td>
-                    <td class="selectable-date">31</td>
-                    <td class="empty-date"></td>
-                    <td class="empty-date"></td>
-                    <td class="empty-date"></td>
                     <td class="empty-date"></td>
                 </tr>
             </table>
         </div>
 
         <div class="form">
-            <h2>Booking Form:</h2>
             <form id="bookingForm">
-                <label for="date">Date:</label>
-                <input type="text" id="date" name="date" placeholder="Select a date" readonly>
+                <label for="date">Dia:</label>
+                <input style="width: 780px; height: 20px;" type="text" id="date" name="date" placeholder=" -- Escolhe uma data no calendário -- " readonly><br><br>
 
-                <label for="time">Time:</label>
-                <select id="time" name="time" disabled>
-                    <option value="">-- Select a time --</option>
-                    <option value="14:30">14:30</option>
+                <label for="time">Horários disponíveis:</label>
+                <select style="width: 800px; height: 40px;" id="time" name="time" disabled>
+                    <option value="">-- Escolhe uma hora --</option>
+                    <option value="14:30">9:30</option>
+                    <option value="14:30">10:30</option>
+                    <option value="14:30">11:00</option>
+                    <option value="14:30">12:30</option>
                     <option value="15:00">15:00</option>
-                    <option value="15:30">15:30</option>
-                </select>
+                    <option value="15:30">17:30</option>
+                </select><br><br>
 
-                <label for="nmec">Partner's NMEC:</label>
-                <input type="text" id="nmec" name="nmec" pattern="[0-9]+" placeholder="Enter digits only" required>
+                <label for="nmec2">NMEC do Colega:</label>
+                <input style="width: 790px; height: 30px;" type="number" id="nmec2" name="nmec2" pattern="[0-9]+" placeholder="  -- Números apenas --" required>
                 <p></p>
-                <label for="topic">Work Topic:</label>
-                <input type="text" id="topic" name="topic" placeholder="Enter topic" required>
+                <label for="nmec2">Tópico da Apresentação:</label>
+                <input style="width: 780px; height: 20px;" type="text" id="top" name="top" placeholder=" -- Máximo 40 letras --" required>
                 <p></p>
-                <label for="link">Work Link:</label>
-                <input type="url" id="link" name="link" placeholder="Enter link" required>
-                <p></p>
-                <input type="submit" value="Confirm Booking" id="submitButton" disabled>
+                <input style="margin-left: 350px; margin-top: 5px;" type="submit" value="Confirmar" id="submitButton" disabled>
             </form>
         </div>
 
         <div class="confirmation" id="confirmation" style="display: none;">
-            <h2>Booking Confirmation:</h2>
-            <p>Your booking has been made successfully!</p>
-            <p>Redirecting to <a href="menu.html">Menu</a>...</p>
+            <h2>Marcação com sucesso! Apresentação número:</h2>
+            <span id="appnum"></span>
+            
+            <p>Ir para <a href="menu.html">Menu</a>...</p>
         </div>
     </div>
 
@@ -278,6 +245,15 @@
         const dateInput = document.getElementById('date');
         const timeSelect = document.getElementById('time');
         const submitButton = document.getElementById('submitButton');
+        globalThis.appnum = getnum();
+
+        window.onload = function() {
+        document.getElementById("appnum").textContent = globalThis.appnum;
+        };
+
+        function getnum() {
+            return Math.floor((Math.random() * 1000) + 1);
+        }
 
         for (let i = 0; i < selectableDates.length; i++) {
             selectableDates[i].addEventListener('click', function() {
@@ -294,7 +270,7 @@
                 submitButton.disabled = false;
 
                 // Set the selected date in the date input field
-                dateInput.value = this.innerText;
+                dateInput.value = this.innerText + "/06/2023";
             });
         }
 
@@ -304,16 +280,16 @@
             // Get form values
             const date = dateInput.value;
             const time = timeSelect.value;
-            const nmec = document.getElementById('nmec').value;
-            const topic = document.getElementById('topic').value;
-            const link = document.getElementById('link').value;
+            const topic = document.getElementById('top').value;
+            const nmec2 = document.getElementById('nmec2').value;
+            const number = globalThis.appnum;
 
-            // Save the form data or perform any desired action
-            console.log('Date:', date);
-            console.log('Time:', time);
-            console.log('NMEC do Parceiro:', nmec);
-            console.log('Tópico do Trabalho:', topic);
-            console.log('Link do Trabalho:', link);
+            localStorage.setItem('storedDate', date);
+            localStorage.setItem('storedTime', time);
+            localStorage.setItem('storedTopic', topic);
+            localStorage.setItem('storedNumber', number);
+            localStorage.setItem('storedNmec2', nmec2);
+
 
             // Show the confirmation message
             bookingForm.style.display = 'none';
